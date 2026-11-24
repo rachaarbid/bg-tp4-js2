@@ -1,0 +1,64 @@
+/* Mise en forme globale du conteneur */
+#table_container {
+    font-family: Calibri, sans-serif;
+    width: 88%;
+    margin: auto;
+    text-align: left;
+}
+/* Mise en forme du tableau */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 0;
+}
+/* En-têtes et cellules */
+th, td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+}
+
+/* En-tête bleu */
+th {
+    background-color: #0788b5;
+    color: white;
+    text-align: center;
+}
+
+/* Colonnes numériques : N° et Points */
+.col_number {
+    width: 10%;
+    text-align: center;
+}
+
+/* Colonnes Nom et Prénom */
+.col_text {
+    width: 30%;
+    text-align: left;
+}
+
+/* Colonne Select */
+.col_chkbox {
+    width: 10%;
+    text-align: center;
+}
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 0;
+}
+#container_summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eeeeee;
+    padding: 5px 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#container_summary p {
+    margin: 0;
+}
+.form_group {
+    display: inline-block;
+}

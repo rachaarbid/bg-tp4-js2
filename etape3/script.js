@@ -1,0 +1,75 @@
+ // Utilisation du mode strict (slide 141)
+"use strict"; // Utilisation du mode strict (slide 141
+// Déclaration d'une variable avec let (slide 37)
+let lignes = 0;
+// Déclaration d'un tableau (slide 38)
+// Déclaration d'objets littéraux avec leurs propriétés (slide 39)
+// Création d'un tableau d'objets (slide 40)
+const persons = [
+    { nom: "nom-1", prenom: "prenom-1", points: 5 },
+    { nom: "nom-2", prenom: "prenom-2", points: 10 },
+    { nom: "nom-3", prenom: "prenom-3", points: 15 },
+];
+// Appel de la fonction init() (slide 45)
+init();
+// Définition de la fonction init() (slide 45)
+function init() {
+    // Parcourir les éléments du tableau avec une boucle for...of (slide 44)
+    for (const person of persons) {
+        // Accéder aux propriétés d'un objet (slide 39)
+        // Appeler la fonction doInsert() (slide 45)
+        doInsert(person.nom, person.prenom, person.points);
+    }
+}
+// Définition de la fonction doInsert() avec ses paramètres (slide 45)
+function doInsert(nom, prenom, points) {
+    // Incrémenter le compteur avec l'opérateur ++ (slide 41)
+    lignes++;
+    // Appeler la fonction doInsertRowTable() (slide 45)
+    doInsertRowTable(lignes, nom, prenom, points);
+}
+// Définition de la fonction doInsertRowTable() avec ses paramètres (slide 45)
+function doInsertRowTable(num, nom, prenom, points) {
+    // Récupérer un élément HTML par son identifiant (slide 61)
+    const table = document.getElementById("table_persons");
+    // Créer une nouvelle ligne HTML avec createElement() (slide 104)
+    const row = document.createElement("tr");
+    // Modifier un attribut HTML avec setAttribute() (slide 107)
+    row.setAttribute("class", "row");
+    // Créer les cinq colonnes HTML avec createElement() (slide 104)
+    const col1 = document.createElement("td");
+    const col2 = document.createElement("td");
+    const col3 = document.createElement("td");
+    const col4 = document.createElement("td");
+    const col5 = document.createElement("td");
+    // Modifier le contenu textuel avec innerText (slide 91)
+    col1.innerText = num;
+    col2.innerText = nom;
+    col3.innerText = prenom;
+    col4.innerText = points;
+    // Créer un élément HTML input (slide 104)
+    const checkbox = document.createElement("input");
+    // Définir l'attribut type avec setAttribute() (slide 107)
+    checkbox.setAttribute("type", "checkbox");
+    // Ajouter un élément enfant avec appendChild() (slide 103)
+    col5.appendChild(checkbox);
+    // Affecter les classes aux colonnes avec setAttribute() (slide 107)
+    col1.setAttribute("class", "col_number");
+    col2.setAttribute("class", "col_text");
+    col3.setAttribute("class", "col_text");
+    col4.setAttribute("class", "col_number");
+    col5.setAttribute("class", "col_chkbox");
+    // Ajouter les colonnes comme éléments enfants de la ligne (slide 103)
+    row.appendChild(col1);
+    row.appendChild(col2);
+    row.appendChild(col3);
+    row.appendChild(col4);
+    row.appendChild(col5);
+    // Ajouter la ligne comme élément enfant du tableau (slide 103)
+    table.appendChild(row);
+}
+// Définition de la fonction consoleTableau() (slide 45)
+function consoleTableau() {
+    // Afficher le tableau persons dans la console avec console.log() (slide 33)
+    console.log(persons);
+}
