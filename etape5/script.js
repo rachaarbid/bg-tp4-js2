@@ -1,5 +1,5 @@
 // Utilisation du mode strict (slide 141)
-"use strict"; // Utilisation du mode strict (slide 141)
+"use strict";
 // Déclaration d'une variable avec let (slide 37)
 let lignes = 0;
 // Déclaration d'une variable avec let (slide 37)
@@ -65,12 +65,8 @@ function doInsertRowTable(num, nom, prenom, points) {
     col3.setAttribute("class", "col_text");
     col4.setAttribute("class", "col_number");
     col5.setAttribute("class", "col_chkbox");
-    // Ajouter les colonnes comme éléments enfants de la ligne (slide 103)
-    row.appendChild(col1);
-    row.appendChild(col2);
-    row.appendChild(col3);
-    row.appendChild(col4);
-    row.appendChild(col5);
+    // Ajouter les colonnes à la ligne avec append() (slide 98)
+    row.append(col1, col2, col3, col4, col5);
     // Ajouter la ligne comme élément enfant du tableau (slide 103)
     table.appendChild(row);
 }
@@ -93,12 +89,12 @@ function doNewData() {
     // Récupérer les valeurs des champs avec la propriété value (slide 93)
     let nom = elt_nom.value;
     let prenom = elt_prenom.value;
-    let points = parseInt(elt_points.value); // Convertir le texte en nombre entier avec parseInt() (TP, slide 53)
+    let points = parseInt(elt_points.value);
     // Vérifier si les champs sont vides avec une condition if...else (slide 42)
     // Utiliser les opérateurs de comparaison et logiques (slide 41)
-    if (nom === "" || prenom === "" || Number.isNaN(points)) { // Vérifier si points n'est pas un nombre (TP, slide 55)
+    if (nom === "" || prenom === "" || Number.isNaN(points)) {
         // Afficher un message avec alert() (slide 34)
-        window.alert("Formulaire incomplet");
+        window.alert("Formulaire incomplet !");
     } else {
         // Appeler la fonction doInsert() avec les nouvelles données (slide 45)
         doInsert(nom, prenom, points);

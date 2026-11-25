@@ -1,5 +1,5 @@
 // Utilisation du mode strict (slide 141)
-"use strict"; // Utilisation du mode strict (slide 141)
+"use strict";
 // Déclaration d'une variable avec let (slide 37)
 let lignes = 0;
 // Déclaration d'une variable avec let (slide 37)
@@ -65,12 +65,8 @@ function doInsertRowTable(num, nom, prenom, points) {
     col3.setAttribute("class", "col_text");
     col4.setAttribute("class", "col_number");
     col5.setAttribute("class", "col_chkbox");
-    // Ajouter les colonnes comme éléments enfants de la ligne (slide 103)
-    row.appendChild(col1);
-    row.appendChild(col2);
-    row.appendChild(col3);
-    row.appendChild(col4);
-    row.appendChild(col5);
+    // Ajouter les colonnes à la ligne avec append() (slide 98)
+    row.append(col1, col2, col3, col4, col5);
     // Ajouter la ligne comme élément enfant du tableau (slide 103)
     table.appendChild(row);
 }

@@ -62,3 +62,18 @@ th {
 .form_group {
     display: inline-block;
 }
+/* Mise en forme du formulaire */
+#form_container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 0;
+}
+.form_label {
+    font-weight: bold;
+    margin-right: 5px;
+}
+.form_field {
+    padding: 4px;
+    border: 1px solid #888888;
+}
